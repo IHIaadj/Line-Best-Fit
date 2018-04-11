@@ -50,8 +50,7 @@ var points;
 var learningRate = 0.0001;
 
 // Saving the error values
-errors = []; 
-taille = 0; 
+var errorC = 0; 
 
 // Compute error : calculate the distance between the line of best fit and each point of the graph. 
 function compute_error(){
@@ -63,8 +62,7 @@ function compute_error(){
 
 	}
  
-	errors[taille] = error/points.length;
-	taille += 1;  
+	errorC = error/points.length; 
 	return error/points.length; 
 }
 
@@ -150,6 +148,7 @@ function run(){
 	m = t[1];
 	
 	changeData(); 
+	compute_error(); 
 }
 
 function changeData(){
@@ -182,15 +181,16 @@ document.getElementById('runAll').addEventListener('click', function() {
 	if (bubbleChartData.datasets.length > 0) {
 		for(var i = 0 ; i < 1000 ; i++){
 			run();
-			compute_error(); 
+			
 		}
+		compute_error(); 
 		updateExplanation(); 
 		done = true; 
 	}
 });
 
 function updateExplanation(){
-	document.getElementById('explanation').innerHTML = " m = "+ m + "<br> b = " + b; 
+	document.getElementById('explanation').innerHTML = " m = "+ m + "<br> b = " + b +"<br> error = " + errorC; 
 }
 
 

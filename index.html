@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Math Simulation</title>
+	<link href="./frame.css" rel="stylesheet">
+	
+	<link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+	<script src ="./utils.js"> </script>
+	<script src ="./Chart.bundle.js"> </script>
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+	<div id="card">
+		<h2 align = "center" > Line of best fit </h2>
+		<div id="chart">
+			<canvas id="canvas"></canvas>
+		</div>
+		<button id="runIter">Run one iteration </button>
+		<button id="runAll">Run 1000 !  </button>
+		<p> nombre d'itération  : 1000 </p>
+		<p id ="explanation"></p>
+		<div id="prediction">
+			<h4 align="center">Predict !</h4>
+			<input type="number" id="x" placeholder="Enter a distance number"/>
+			<h2 id ="result" align ="center"></h2>
+		</div>
+
+		<!-- Need to be done a pop-up --> 
+		<div id="graph3D" style="width:100%;height:100%"></div>
+	</div>
+	
+	
+	<script src="./application.js"></script>
+</body>
+</html>
